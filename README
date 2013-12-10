@@ -1,0 +1,14 @@
+BIBOS HACKS
+
+This repo contains various scripts that I have hacked/copy-pasted together for the Aarhus Public Libraries version of Ubuntu called BibOS
+
+At the momenet BibOS is based on Ubuntu 12.04 LTS, so the scripts should work on a system based on that.
+
+The names of the scripts almost always give away what they are intended to do. :)
+
+I've tried keeping the repo (not the code) sort of tidy, but you will surely find files (like the utility scripts) that you won't need.
+
+Feel free to use any and/or all scripts for personal or commercial use. If you don't give me credit, I'll think you're a dick, but that's probably all that's gonna happen.
+
+~Robotto
+

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Exec=google-chrome
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Chrome
+Name=Chrome
+Comment[en_US]=run the Google-chrome webbrowser at startup
+Comment=run the Google-chrome webbrowser at startup
+Name[en]=Chrome
+
