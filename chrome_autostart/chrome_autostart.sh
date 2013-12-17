@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 # This script will add the chrome.desktop file to /home/.skjult/.autostart which will make chrome run at boot
 
@@ -22,6 +22,7 @@ then
 
 else
     echo "removing chrome from autostart"
+    rm /home/.skjult/.autostart/chrome.desktop
     echo "Done."
 fi
 
