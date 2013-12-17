@@ -15,15 +15,18 @@ import sys
 import json
 
 
-download_directory = '/home/user/Desktop'
-chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
+#download_directory = '/home/user/Desktop'
+#chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
+
+chrome_preferences = '/home/user/.config/google-chrome/Default/Preferences'
+
+
 #download_directory = '/home/robotto/Desktop'
 #chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 if len(sys.argv) == 1:
-    print "No parameters supplied.. assuming you meant ON!"
-    sys.argv[0]='on'
+    print "No parameters supplied.. "
     print "Usage: chrome_download_to_desktop.py <on/off>"
-
+    sys.exit(1)
 
 
 #CHROME:
@@ -48,7 +51,7 @@ try:
 
             download = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
 
-            #print download
+            print download
 
             data.update(download)
 
