@@ -14,6 +14,7 @@
 import sys
 import json
 
+
 download_directory = '/home/user/Desktop'
 chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
 #download_directory = '/home/robotto/Desktop'
