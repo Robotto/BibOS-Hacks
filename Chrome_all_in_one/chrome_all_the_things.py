@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # THE ALL-IN-ONE CHROME SETTINGS SCRIPT
 #
 # This script will change the chrome settings to:
@@ -14,11 +16,11 @@
 import sys
 import json
 
-#chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
-#download_directory = '/home/bruger/Desktop'
+chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
+download_directory = '/home/user/Desktop'
 
-chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
-download_directory = '/home/robotto/Desktop'
+#chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
+#download_directory = '/home/robotto/Desktop'
 
 
 #Open the chrome settings file, and read the contents into a json structure:
