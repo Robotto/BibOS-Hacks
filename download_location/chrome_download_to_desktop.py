@@ -14,14 +14,15 @@
 import sys
 import json
 
-download_directory = '/home/bruger/Desktop'
+download_directory = '/home/user/Desktop'
 chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
 #download_directory = '/home/robotto/Desktop'
 #chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 if len(sys.argv) == 1:
-    print "No parameters supplied.. did you want it turned on or off?"
+    print "No parameters supplied.. assuming you meant ON!"
+    sys.argv[0]='on'
     print "Usage: chrome_download_to_desktop.py <on/off>"
-    sys.exit(1)
+
 
 
 #CHROME:
