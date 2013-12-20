@@ -3,10 +3,9 @@
 # THE ALL-IN-ONE CHROME SETTINGS SCRIPT
 #
 # This script will change the chrome settings to:
-# 1. Set the default download location to the Desktop
-# 2. Accept cookies
-# 3. Accept popups
-# 4. Accept running the javaplugin on any site (user still needs to verify unsigned code)
+# 1. Accept cookies
+# 2. Accept popups
+# 3. Accept running the javaplugin on any site (user still needs to verify unsigned code)
 
 # BY ROBOTTO
 
@@ -17,7 +16,6 @@ import sys
 import json
 
 chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
-download_directory = '/home/user/Desktop'
 
 #chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 #download_directory = '/home/robotto/Desktop'
@@ -36,36 +34,10 @@ try:
         data = json.load(chrome_file)
 
 
-            #1 - MODIFY DOWNLOAD LOCATION:
 
-    print
-    print "1: Setting download location to: %s ..." % download_directory
+            #1 - ALLOW COOKIES:
 
-    try:
-        print "Trying to remove current entry..."
-        del data['download']
-    except Exception as e:
-        print "hmm.. It looks like no custom download location was set: " + str(e)
-
-    try:
-
-        print "Adding new download location"
-
-        download = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
-
-        data.update(download)
-
-        print "Done - Download location set to: %s" % download_directory
-        print
-
-    except Exception as e:
-        print "Error setting custom download location. Aborting. Nothing has been changed! Error msg: " + str(e)
-        sys.exit(1)
-
-
-            #2 - ALLOW COOKIES:
-
-    print "2: Allowing cookies..."
+    print "1: Allowing cookies..."
 
     try:
         print "Trying to remove blocking of third party cookies..."
@@ -83,7 +55,7 @@ try:
 
             #3 - ALLOW POPUPS:
 
-    print "3: Allowing popups..."
+    print "2: Allowing popups..."
 
     try:
         print "Trying to remove old popup settings..."
@@ -113,7 +85,7 @@ try:
 
             #4 - ALLOW JAVA:
 
-    print "4: Allowing Java..."
+    print "3: Allowing Java..."
 
     #heres some needed strings:
     middle_part='''"pref_version": 1'''
