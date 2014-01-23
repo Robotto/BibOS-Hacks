@@ -29,64 +29,58 @@ import sys
 import json
 
 
-#download_directory = '/home/user/Desktop'
 #chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
-
-chrome_preferences = '/home/user/.config/google-chrome/Default/Preferences'
-
-
-#download_directory = '/home/robotto/Desktop'
-#chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
+#chrome_preferences = '/home/user/.config/google-chrome/Default/Preferences'
+chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 if len(sys.argv) == 1:
-    print "No parameters supplied.. "
-    print "Usage: chrome_home.py <on/off>"
-    sys.exit(1)
+	print "No parameters supplied.. "
+	print "Usage: chrome_home.py <on/off>"
+	sys.exit(1)
 
 
 #CHROME:
 
 
 try:
-    with open(chrome_preferences, 'r') as chrome_file:
+	with open(chrome_preferences, 'r') as chrome_file:
 
-        data = json.load(chrome_file)
+		data = json.load(chrome_file)
 
-    try:
-    	#read the current entry into a json object first
-    except Exception as e:
-    	#whatevs
+	try:
+		print "Removing current entry.."
 
-    try:
-        print "Removing current entry.."
-        #Probably don't want to do this:# del data['browser']['show_home_button']
-
-    except Exception as e:
-        print "hmm.. It looks like the home button was already gone: " + str(e)
-
-    if sys.argv[1]=='on':
-        try:
-
-            print "Unhiding the button.."
-
-            #download = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
+		#print data['browser']
+		del data['browser']['show_home_button']
+        #print data['browser']
 
 
-            print browser
+	except Exception as e:
+		print "hmm.. It looks like the home button was already gone: " + str(e)
 
-            data.update(browser)
+	if sys.argv[1]=='on':
+		try:
 
-            #print data
+			print "Unhiding the button.."
 
-        except Exception as e:
-            print "An error occurred.. maybe this can help?: " + str(e)
-            sys.exit(1)
+			#browser = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
+			show_home_button = dict(show_home_button=True)
 
-    with open(chrome_preferences, 'w') as chrome_file:
-        json.dump(data, chrome_file)
+			#print show_home_button
 
-    print "Done"
-    print
+			data['browser'].update(show_home_button)
+
+			#print data['browser']
+
+		except Exception as e:
+			print "An error occurred.. maybe this can help?: " + str(e)
+			sys.exit(1)
+
+	with open(chrome_preferences, 'w') as chrome_file:
+		json.dump(data, chrome_file)
+
+	print "Done"
+	print
 except Exception as e:
-    print "An error occurred, probably unable to open Chrome Preferences file: " + str(e)
-    print
+	print "An error occurred, probably unable to open Chrome Preferences file: " + str(e)
+	print
 
