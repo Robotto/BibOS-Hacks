@@ -36,7 +36,6 @@ chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 if len(sys.argv) == 1:
 	print "No parameters supplied.. "
 	print "Usage: chrome_home.py <on/off>"
-	print "USE ONLY lowercase ARGUMENTS!"
 	sys.exit(1)
 
 
@@ -59,7 +58,8 @@ try:
 	except Exception as e:
 		print "hmm.. It looks like the home button was already gone: " + str(e)
 
-	if sys.argv[1])=='on':
+	if any([sys.argv[1]=='on',sys.argv[1]=='ON',sys.argv[1]=='On',sys.argv[1]=='oN']): #check for all case combinations of the argument.
+
 		try:
 
 			print "Unhiding the button.."
