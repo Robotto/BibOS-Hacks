@@ -29,13 +29,14 @@ import sys
 import json
 
 
-chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
+#chrome_preferences = '/home/.skjult/.config/google-chrome/Default/Preferences'
 #chrome_preferences = '/home/user/.config/google-chrome/Default/Preferences'
-#chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
+chrome_preferences = '/home/robotto/.config/google-chrome/Default/Preferences'
 
 if len(sys.argv) == 1:
 	print "No parameters supplied.. "
 	print "Usage: chrome_home.py <on/off>"
+	print "USE ONLY lowercase ARGUMENTS!"
 	sys.exit(1)
 
 
@@ -58,7 +59,7 @@ try:
 	except Exception as e:
 		print "hmm.. It looks like the home button was already gone: " + str(e)
 
-	if sys.argv[1]=='on':
+	if sys.argv[1])=='on':
 		try:
 
 			print "Unhiding the button.."
