@@ -37,7 +37,6 @@ try:
 
         data = json.load(chrome_file)
 
-
     try:
         print "Removing current entries..."
         del data['download']
@@ -49,7 +48,7 @@ try:
 
             print "adding new download location: %s" % download_directory
 
-            download = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
+            download = dict(download=dict(directory_upgrade=True,default_directory=download_directory))
 
             print download
 
