@@ -170,7 +170,7 @@ try:
         with open(chrome_preferences, 'w') as chrome_file:
             json.dump(data, chrome_file)
 
-            print "Home button added.."
+        print "Home button added.."
 
         except Exception as e:
             print "An error occurred trying to do the home button thing.. maybe this can help?: " + str(e)
