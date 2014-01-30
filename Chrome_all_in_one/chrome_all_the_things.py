@@ -172,9 +172,9 @@ try:
 
         print "Home button added.."
 
-        except Exception as e:
-            print "An error occurred trying to do the home button thing.. maybe this can help?: " + str(e)
-            sys.exit(1)
+    except Exception as e:
+        print "An error occurred trying to do the home button thing.. maybe this can help?: " + str(e)
+        sys.exit(1)
 
     print "All the things are done! yay!"
     print
