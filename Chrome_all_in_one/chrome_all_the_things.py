@@ -6,6 +6,7 @@
 # 1. Accept cookies
 # 2. Accept popups
 # 3. Accept running the javaplugin on any site (user still needs to verify unsigned code)
+# 4. Turn back on the home button for chrome
 
 # BY ROBOTTO
 
@@ -147,6 +148,35 @@ try:
         print "An error occurred trying to do the java thing.. maybe this can help?: " + str(e)
         sys.exit(1)
 
+    try:
+
+    	print 'Turning on the home button...'
+
+    	with open(chrome_preferences, 'r') as chrome_file:
+            contents = chrome_file.read()
+
+        try:
+			print "Removing current entry.. if any."
+			#print data['browser']
+			del data['browser']['show_home_button']
+			print "current entry removed"
+        	#print data['browser']
+		except Exception as e:
+			print "No home button entry, this is to be expected.: " + str(e)
+
+
+		show_home_button = dict(show_home_button=True)
+
+		data['browser'].update(show_home_button)
+
+		with open(chrome_preferences, 'w') as chrome_file:
+			json.dump(data, chrome_file)
+
+		print "Home button added.."
+
+	except Exception as e:
+        print "An error occurred trying to do the home button thing.. maybe this can help?: " + str(e)
+        sys.exit(1)
 
     print "All the things are done! yay!"
     print
