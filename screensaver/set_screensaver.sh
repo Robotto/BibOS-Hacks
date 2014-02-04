@@ -6,23 +6,19 @@ then
     echo "turn off text with $(basename $0) <off>"
     exit 1
 fi
-#echo "Installing xscreensaver.."
-#apt-get install xscreensaver xscreensaver-gl-extra xscreensaver-data-extra -y --force-yes
-#echo "Removing gmome-screensaver"
-#apt-get remove gnome-screensaver
 
+echo "Wget'ing default .xscreensaver file.."
 #get original .xscreensaver settings file:
-cd /home/.skjult/
-#cd /home/user/
+#cd /home/.skjult/
+cd /home/user/
 rm .xscreensaver
-wget http://62.212.66.171/BibOS/.xscreensaver
+wget http://62.212.66.171/bibOS_DOT_xscreensaver -O .xscreensaver
 
 
 
 if [ "$1" == "off" ]
 then
 
-	#remove previous entry with simple check for "textLiteral" string
 	echo "Removing text from screensaver"
 
 	#WRONG:
@@ -40,7 +36,6 @@ else
 	echo "editing /home/.skjult/.xscreensaver..."
 
 	#WRONG!
-#	sed -i 's|^textFile:.*$|textLiteral:    $1\ntextFile: |' /home/.skjult/.xscreensaver
 	sed -i 's|^programs.*$|programs:/\ngltext -root -text $1|' /home/user/.xscreensaver
 	echo
 	echo "Done. Enjoy your new screensaver text :)"
