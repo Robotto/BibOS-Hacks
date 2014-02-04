@@ -38,7 +38,7 @@ mode:		one
 selected:	1
 
 programs:								      \
-  GL: 				gltext -root -no-spin -text '<3 BibOS2 <3'	    \n\
+  GL: 				gltext -root -no-spin -text 'heste'	    \n\
 
 
 pointerPollTime:    0:00:05
