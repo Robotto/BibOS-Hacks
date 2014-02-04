@@ -1,7 +1,7 @@
 #!/bin/bash
 
-userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
-#userdir="/home/.skjult"
+#userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
+userdir="/home/.skjult"
 
 if [ $# -ne 1 ]
 then
