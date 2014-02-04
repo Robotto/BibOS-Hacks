@@ -26,7 +26,7 @@ else
     wget http://62.212.66.171/bibOS_DOT_xscreensaver -O $userdir/.xscreensaver
 
     echo "Adding xscreensaver to autostart"
-    mkdir $userdir/.config/autostart
+    #mkdir $userdir/.config/autostart
     printf "[Desktop Entry]\nType=Application\nExec=xscreensaver -nosplash\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=xscreensaver\nName=xscreensaver\nComment[en_US]=run the xscreensaver at startup\nComment=run the xscreensaver at startup\nName[en]=xscreensaver\n" > $userdir/.config/autostart/xscreensaver.desktop
     echo "Done."
 	echo
