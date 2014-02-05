@@ -64,7 +64,7 @@ try:
 
 			print "Unhiding the button.."
 
-			#browser = dict(download=dict(directory_upgrade='true',default_directory=download_directory))
+			#browser = dict(download=dict(directory_upgrade=True,default_directory=download_directory))
 			show_home_button = dict(show_home_button=True)
 
 			#print show_home_button
