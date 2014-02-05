@@ -10,6 +10,6 @@ rm -rf $placement_dir/Downloads
 rm -rf $placement_dir/Documents
 echo "Setting up symbolic links.."
 cd 
-ln -s $target_dir/Desktop $placement_dir/Downloads
-ln -s $target_dir/Desktop $placement_dir/Documents
+ln -s $target_dir $placement_dir/Downloads
+ln -s $target_dir $placement_dir/Documents
 echo "done"
