@@ -1,7 +1,7 @@
 #!/bin/bash
 
-userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
-#userdir="/home/.skjult"
+#userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
+userdir="/home/.skjult"
 
 if [ $# -ne 2 ]
 then
@@ -40,9 +40,9 @@ else
         echo $minutes
     else minutes="$2"
         echo $minutes
-fi
+    fi
 
-    gltextline=''' GL:                           gltext -root -text "'$1'"        \\n\\'''
+    gltextline=''' GL:                           gltext -root -no-spin -text "'$1'"        \\n\\'''
     timeoutline='''timeout: 0:'$minutes':00'''
 
 	sed -i "/gltext/c$gltextline" $userdir/.xscreensaver
