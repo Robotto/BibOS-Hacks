@@ -18,7 +18,7 @@ echo "Done."
 if [ "$1" == "off" ]
 then
 	echo "Removing xscreensaver from autostart"
-#	rm $userdir/.config/autostart/xscreensaver.desktop
+	rm $userdir/.config/autostart/xscreensaver.desktop
 	echo "Done, enjoy your new text-less screensaver :)"
 	exit 0
 else
@@ -28,7 +28,7 @@ else
 
     echo "Adding xscreensaver to autostart"
     #mkdir $userdir/.config/autostart
- #   printf "[Desktop Entry]\nType=Application\nExec=xscreensaver -nosplash\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=xscreensaver\nName=xscreensaver\nComment[en_US]=run the xscreensaver at startup\nComment=run the xscreensaver at startup\nName[en]=xscreensaver\n" > $userdir/.config/autostart/xscreensaver.desktop
+    printf "[Desktop Entry]\nType=Application\nExec=xscreensaver -nosplash\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=xscreensaver\nName=xscreensaver\nComment[en_US]=run the xscreensaver at startup\nComment=run the xscreensaver at startup\nName[en]=xscreensaver\n" > $userdir/.config/autostart/xscreensaver.desktop
     echo "Done."
 	echo
 	echo "Editing $userdir/.xscreensaver... "
