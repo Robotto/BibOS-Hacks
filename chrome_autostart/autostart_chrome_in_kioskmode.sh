@@ -5,18 +5,18 @@
 
 # Expect exactly two input parameters
 
-if [ $# -ne 2 ]
+if [ $# -ne 1 ]
 then
-    echo "usage: $(basename $0) <on/off> <url>"
-    echo ""
+    echo "usage: $(basename $0) <url>"
+    echo "if url is 'off' this is disabled"
     exit -1
 fi
 
-if [ "$1" == "on" ]
+if [ "$1" -ne "off" ]
 then
-    echo "Setting up kiosk-mode Chrome to autostart and go to $2"
+    echo "Setting up kiosk-mode Chrome to autostart and go to $1"
     mkdir /home/.skjult/.config/autostart
-    printf "[Desktop Entry]\nType=Application\nExec= google-chrome --kiosk $2 --full-screen\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=Chrome\nName=Chrome\nComment[en_US]=run the Google-chrome webbrowser at startup\nComment=run the Google-chrome webbrowser at startup\nName[en]=Chrome\n" > /home/.skjult/.config/autostart/chrome.desktop
+    printf "[Desktop Entry]\nType=Application\nExec= google-chrome --kiosk $1 --full-screen\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=Chrome\nName=Chrome\nComment[en_US]=run the Google-chrome webbrowser at startup\nComment=run the Google-chrome webbrowser at startup\nName[en]=Chrome\n" > /home/.skjult/.config/autostart/chrome.desktop
 
     echo "Done."
 
