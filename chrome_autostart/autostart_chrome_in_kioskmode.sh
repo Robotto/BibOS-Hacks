@@ -12,7 +12,7 @@ then
     exit -1
 fi
 
-if [ "$1" -ne "off" ]
+if [ "$1" != "off" ]
 then
     echo "Setting up kiosk-mode Chrome to autostart and go to $1"
     mkdir /home/.skjult/.config/autostart
