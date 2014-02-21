@@ -2,7 +2,8 @@
 
 #getting a ~/.java folder that has already allowed netbank...
 #also fetches .oces2/ and .pki
-remote_ip = "172.16.2.130"
+
+REMOTE="172.16.2.130"
 
 echo "I AM:"
 whoami
@@ -15,7 +16,7 @@ rm -rf .java
 rm -rf .oces2
 rm -rf .pki
 echo "Fecthing new tarball from gateway server..."
-wget http://$remote_ip/bibOS_java_folders.tar.bz2
+wget http://$REMOTE/bibOS_java_folders.tar.bz2
 echo "unpacking.."
 tar -xvf bibOS_java_folders.tar.bz2
 echo "cleaning up..."
