@@ -2,6 +2,7 @@
 
 #userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
 userdir="/home/.skjult"
+remote_ip="172.16.2.130"
 
 if [ $# -ne 2 ]
 then
@@ -14,20 +15,24 @@ echo "Removing old .xscreensaver file, if present"
 rm $userdir/.xscreensaver
 echo "Done."
 
-
 if [ "$1" == "off" ]
 then
 	echo "Removing xscreensaver from autostart"
 	rm $userdir/.config/autostart/xscreensaver.desktop
-	echo "Done, enjoy your new text-less screensaver :)"
+	echo "uninstalling xscreensaver"
+	apt-get remove xscreensaver xscreensaver-gl-extra -y
+	cho "Done"
 	exit 0
 else
 
-    echo "Wget'ing default .xscreensaver file.."
-    wget http://62.212.66.171/bibOS_DOT_xscreensaver -O $userdir/.xscreensaver
+    echo "installing xscreensaver"
+    apt-get install xscreensaver xscreensaver-gl-extra -y
 
-    echo "Adding xscreensaver to autostart"
-    #mkdir $userdir/.config/autostart
+    echo "Wget'ing default .xscreensaver file.."
+    wget http://$remote_ip/DOT_xscreensaver -O $userdir/.xscreensaver
+
+    echo "Adding xscreensaver to autostart:"
+    mkdir $userdir/.config/autostart
     printf "[Desktop Entry]\nType=Application\nExec=xscreensaver -nosplash\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=xscreensaver\nName=xscreensaver\nComment[en_US]=run the xscreensaver at startup\nComment=run the xscreensaver at startup\nName[en]=xscreensaver\n" > $userdir/.config/autostart/xscreensaver.desktop
     echo "Done."
 	echo
@@ -37,10 +42,10 @@ else
     if [ $(($2)) -lt 10 ]
     then
         minutes="0$2"
-        echo $minutes
     else minutes="$2"
-        echo $minutes
     fi
+        echo "setting timeout to: $minutes"
+
 
     gltextline=''' GL:                           gltext -root -no-spin -text "'$1'"        \\n\\'''
     timeoutline='''timeout: 0:'$minutes':00'''
