@@ -38,14 +38,14 @@ rm -rf .minecraft
 #get the java file:
 cd Desktop
 rm Minecraft.jar
-wget http://62.212.66.171/m/Minecraft.jar
+wget 62.212.66.171/Minecraft.jar
 
 
 #get the preconfigured game data:
 cd /home/.skjult/
 #mkdir .minecraft
 #cd .minecraft
-wget http://62.212.66.171/m/.minecraft.tar.gz
+wget 62.212.66.171/.minecraft.tar.gz
 tar xvf .minecraft.tar.gz
 
 #file permissions??:
