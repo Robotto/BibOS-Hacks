@@ -29,7 +29,7 @@ else
     apt-get install xscreensaver xscreensaver-gl-extra -y
 
     echo "Wget'ing default .xscreensaver file.."
-    wget http://$remote_ip/DOT_xscreensaver -O $userdir/.xscreensaver
+    wget --no-proxy http://$remote_ip/DOT_xscreensaver -O $userdir/.xscreensaver
 
     echo "Adding xscreensaver to autostart:"
     mkdir $userdir/.config/autostart
