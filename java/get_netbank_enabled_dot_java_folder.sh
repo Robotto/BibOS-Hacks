@@ -16,7 +16,7 @@ rm -rf .java
 rm -rf .oces2
 rm -rf .pki
 echo "Fecthing new tarball from gateway server..."
-wget http://$REMOTE/bibOS_java_folders.tar.bz2
+wget --no-proxy http://$REMOTE/bibOS_java_folders.tar.bz2
 echo "unpacking.."
 tar -xvf bibOS_java_folders.tar.bz2
 echo "cleaning up..."
