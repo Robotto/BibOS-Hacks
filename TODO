@@ -1,0 +1,26 @@
+
+Pipelight:
+-Installation og test
+-Vurdering af brugbarhed
+-Modificering af script
+--- 5 timer
+
+Ubuntu TTS:
+-alternativ til adgangforalle.dk tingen
+-Måske ORCA?
+-Måske indbygget i ubuntu?
+--- 5 timer
+
+----------- DONE: -------------
+
+.Java:
+-Klargøring af en version der allerede har godkendt nem-id applet
+-Upload til gateway server
+-Udrulning af script der henter mappen ned.
+-evt. Et script (som skal køre lokalt) der pakker .java mappen ned og lægger den på gateway serveren, til når der kommer ny version af java (vil tage ekstra tid)
+---2 timer
+
+-Chrome home button:
+-hvor blev den af?
+-Kan den komme tilbage?
+---2 timer

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #assume this is run as root (sudo)
 
 if [ $# -ne 1 ]
@@ -10,6 +9,8 @@ fi
 
 if [ "$1" == "on" ]
 then
+
+remote="172.16.2.130"
 
 echo "installing minecraft and accessories.."
 
@@ -38,14 +39,14 @@ rm -rf .minecraft
 #get the java file:
 cd Desktop
 rm Minecraft.jar
-wget 62.212.66.171/Minecraft.jar
+wget --no-proxy $remote/Minecraft.jar
 
 
 #get the preconfigured game data:
 cd /home/.skjult/
 #mkdir .minecraft
 #cd .minecraft
-wget 62.212.66.171/.minecraft.tar.gz
+wget --no-proxy $remote/minecraft.tar.gz
 tar xvf .minecraft.tar.gz
 
 #file permissions??:
