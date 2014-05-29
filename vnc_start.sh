@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $# -ne 1 ]
 then
-	echo "you forgot to enter the IP og the host!"
+	echo "you forgot to enter the IP of the host!"
 	echo "try again."
 	exit -1
 fi
