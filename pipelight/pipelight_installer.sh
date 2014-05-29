@@ -10,14 +10,16 @@ whoami
 echo "I AM IN:"
 pwd
 
+echo "Adding pipelight ppa"
+add-apt-repository ppa:pipelight/stable -y
+apt-get update
+echo "installing pipelight"
+apt-get install --install-recommends pipelight-multi -y
+pipelight-plugin -y --update
 
-sudo add-apt-repository ppa:pipelight/stable -y
-sudo apt-get update
-sudo apt-get install --install-recommends pipelight-multi -y
-sudo pipelight-plugin -y --update
 
-# Type in 'Y' to accept the license of Silverlight and all required modules
-sudo pipelight-plugin -y --enable silverlight
+echo "Activating silverlight plugin"
+pipelight-plugin -y --enable silverlight
 
 
 echo "Removing old pipelight helper folders... if any.."
