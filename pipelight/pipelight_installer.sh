@@ -4,7 +4,7 @@
 #getting a ~/.macromedia and .wine-pipelight folder from a bibOS machine that has already visited filmstriben...
 
 #REMOTE="172.16.2.130"
-REMOTE="62.212.66.171"
+REMOTE="62.212.66.171/BibOS"
 
 
 echo "I AM:"

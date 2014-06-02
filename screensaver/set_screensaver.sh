@@ -2,7 +2,8 @@
 
 #userdir="/home/robotto/BIBOS_HACK/screensaver/string_playground"
 userdir="/home/.skjult"
-remote_ip="172.16.2.130"
+#remote_ip="172.16.2.130"
+remote_ip="62.212.66.171/BibOS"
 
 if [ $# -ne 2 ]
 then
@@ -29,7 +30,7 @@ else
     apt-get install xscreensaver xscreensaver-gl-extra -y
 
     echo "Wget'ing default .xscreensaver file.."
-    wget --no-proxy http://$remote_ip/DOT_xscreensaver -O $userdir/.xscreensaver
+    wget http://$remote_ip/DOT_xscreensaver -e use_proxy=yes -e http_proxy=172.16.12.220:8000 -O $userdir/.xscreensaver
 
     echo "Adding xscreensaver to autostart:"
     mkdir $userdir/.config/autostart

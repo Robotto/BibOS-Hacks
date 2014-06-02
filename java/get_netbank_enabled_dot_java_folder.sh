@@ -3,7 +3,8 @@
 #getting a ~/.java folder that has already allowed netbank...
 #also fetches .oces2/ and .pki
 
-REMOTE="172.16.2.130"
+#REMOTE="172.16.2.130"
+REMOTE="62.212.66.171/BibOS"
 
 echo "I AM:"
 whoami
