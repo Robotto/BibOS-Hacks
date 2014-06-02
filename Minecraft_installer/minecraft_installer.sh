@@ -10,7 +10,8 @@ fi
 if [ "$1" == "on" ]
 then
 
-remote="172.16.2.130"
+#remote="172.16.2.130"
+remote="62.212.66.171"
 
 echo "installing minecraft and accessories.."
 
@@ -39,14 +40,14 @@ rm -rf .minecraft
 #get the java file:
 cd Desktop
 rm Minecraft.jar
-wget --no-proxy $remote/Minecraft.jar
+wget $remote/Minecraft.jar -e use_proxy=yes -e http_proxy=172.16.12.220:8000
 
 
 #get the preconfigured game data:
 cd /home/.skjult/
 #mkdir .minecraft
 #cd .minecraft
-wget --no-proxy $remote/minecraft.tar.gz
+wget $remote/minecraft.tar.gz -e use_proxy=yes -e http_proxy=172.16.12.220:8000
 tar xvf .minecraft.tar.gz
 
 #file permissions??:
